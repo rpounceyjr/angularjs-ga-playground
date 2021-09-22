@@ -25,18 +25,30 @@
     <script src="//code.angularjs.org/1.3.0-rc.2/angular-route.min.js"></script>
     <script src="//code.angularjs.org/1.3.0-rc.2/angular-resource.min.js"></script>
     <script src="app.js"></script>
-    <script src="controllers.js"></script>
+    <script src="controller.js"></script>
+
+    <script src="node_modules/angulartics/dist/angulartics.min.js"></script>
+    <script src="node_modules/angulartics-google-analytics/dist/angulartics-ga.min.js"></script>
   </head>
   <body>
     <div class="container">
       <div ng-controller="angularticsController">
         <h1>Angulartics Demo Page</h1>
+        <button
+          analytics-on="click"
+          analytics-event="Download"
+          analytics-category="Content Actions"
+        >
+          Click Me
+        </button>
         <a
           href="#"
-          analytics-on="click"
-          analytics-event="Click"
-          analytics-category="Content Actions"
-          >Click this</a
+          onclick="(event => {
+           gtag('event', 'aaa', {
+  'event_category' : 'bbb',
+  'event_label' : 'ccc'
+});})"
+          >Click this now</a
         >
       </div>
     </div>

@@ -1,8 +1,9 @@
-require("angulartics"); 
+// require("angulartics");
+// require("angulartics-google-analytics") 
 
 const angularticsApp = angular.module("angularticsApp", [
   "ngRoute",
   "ngResource",
   "angulartics",
-  require("angulartics-google-analytics"),
+  'angulartics.google.analytics',
 ]);
